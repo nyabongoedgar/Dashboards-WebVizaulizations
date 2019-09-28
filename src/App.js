@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import Chart from './components/Chart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  async data(){
+    const response = await axios.get('https://wft-geo-db.p.rapidapi.com/v1/locale/locales', {
+        headers: {
+            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+          "x-rapidapi-key": "9bbc581e13mshb7bddca2da084b9p1c0de8jsn8f7bf79d635b"
+        }
+    });
+    return response;
+  }
+
+  componentDidMount(){
+    console.log('Hi')
+  }
+
+  render(){
+    return (
+      <Chart />
+    );
+  }
 }
 
 export default App;
