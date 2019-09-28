@@ -1,9 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 
-export default class Chart extends React.Component{
-    
-    render(){
+export default function Chart(){
         return(
             <Bar
                 data={{
@@ -19,6 +17,5 @@ export default class Chart extends React.Component{
                 height={50}
                 
             />
-        );
-    }   
+        ); 
 }
