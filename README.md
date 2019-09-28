@@ -1,5 +1,6 @@
 ## Project
 In this project, we have a bar graph displaying the amount of rain in the 12 months of the year
+Data in this project is hardcoded but with data coming from an API, this application can be easily customized
 
 ## Dependencies
  - chart.js
